@@ -1,0 +1,64 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "installOhMyZsh": "true",
+      "configureZshAsDefaultShell": true,
+      "installOhMyZshConfig": true,
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "true"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "autoPull": true
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-extra/features/nx-npm:1": {},
+    "ghcr.io/trunk-io/devcontainer-feature/trunk:1": {},
+    "ghcr.io/michidk/devcontainers-features/bun:1": {}
+  },
+  "runArgs": [
+    "--name=ebizbase-dev-infras-devcontainer"
+  ],
+  "mounts": [
+    "source=ebizbase-dev-infras-devcontainer-npm,target=/usr/local/share/npm,type=volume",
+    "source=ebizbase-dev-infras-devcontainer-trunk,target=/home/vscode/.bun/install/cache,type=volume",
+    "source=ebizbase-dev-infras-devcontainer-trunk,target=/home/vscode/.cache/trunk,type=volume",
+    "source=ebizbase-dev-infras-devcontainer-dind,target=/var/lib/docker,type=volume"
+  ],
+  "remoteUser": "vscode",
+  "postCreateCommand": "curl -fsSL https://bun.sh/install | bash && bun install",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.associations": {
+          "*.json": "jsonc"
+        },
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          "trunk-*": true
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "extensions": [
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "shd101wyy.markdown-preview-enhanced",
+        "steoates.autoimport",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

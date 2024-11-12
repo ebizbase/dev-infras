@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  pull_request_target:
+    branches:
+      - main
+  merge_group:
+
+concurrency:
+  group: ${{ github.event.pull_request.head.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+  pull-requests: write
+
+jobs:
+
+  prepare:
+    name: Prepare list of test projects
+    runs-on: ubuntu-latest
+    outputs:
+      affected: ${{ steps.extractor.outputs.affected }}
+      test-projects: ${{ steps.extractor.outputs.test-projects }}
+      e2e-projects: ${{ steps.extractor.outputs.e2e-projects }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0
+      - name: Setup project
+        uses: ./.github/actions/setup
+        with:
+          dependencies: true
+      - name: Add and fetch main branch from original repository
+        run: |
+          repo="${{github.event.pull_request.base.repo.clone_url}}"
+          if [ -z "$repo" ]; then
+            repo="https://github.com/${{github.event.repository.full_name}}.git"
+          fi
+          git remote add upstream "$repo"
+          git fetch upstream main
+      - name: Get projects should run unit test and e2e test
+        id: extractor
+        run: |
+          tests=$(pnpm exec nx show projects --affected --base=upstream/main --with-target test --json | jq -r '.[]')
+          e2es=$(pnpm exec nx show projects --affected --base=upstream/main --with-target e2e --json | jq -r '.[]')
+          echo "Should test projects: $tests"
+          echo "Should e2e projects: $e2es"
+          echo "test-projects=$(printf '%s\n' "${tests[@]}" | jq -R . | jq -s . | jq -c .)" >> $GITHUB_OUTPUT
+          echo "e2e-projects=$(printf '%s\n' "${e2es[@]}" | jq -R . | jq -s . | jq -c .)" >> $GITHUB_OUTPUT
+
+
+  unit-tests:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: ${{ needs.prepare.outputs.test-projects != '[""]' }}
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.prepare.outputs.test-projects) }}
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup project
+        uses: ./.github/actions/setup
+        with:
+          dependencies: true
+          buildx: true
+      - name: Run unit test
+        run: pnpm exec nx run ${{ matrix.project }}:test
+
+
+  e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+    needs: prepare
+    if: ${{ needs.prepare.outputs.test-projects != '[""]' }}
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.prepare.outputs.test-projects) }}
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup project
+        uses: ./.github/actions/setup
+        with:
+          dependencies: true
+          buildx: true
+      - name: Run unit e2e
+        run: pnpm exec nx run ${{ matrix.project }}:e2e
+
+  checks:
+    name: Create github checks for test results
+    runs-on: ubuntu-latest
+    needs: [prepare,unit-tests,e2e-tests]
+    if: always()
+    steps:
+      - uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Unit Test Check
+          conclusion: ${{needs.unit-tests.result == 'skipped' && 'success' || needs.unit-tests.result}}
+      - uses: LouisBrunner/checks-action@v2.0.0
+        if: needs.e2e-tests.result != 'skipped'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: E2E Test Check
+          conclusion: ${{needs.e2e-tests.result == 'skipped' && 'success' || needs.e2e-tests.result}}
+
+
