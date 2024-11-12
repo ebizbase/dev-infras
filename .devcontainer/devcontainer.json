@@ -1,8 +1,11 @@
 {
   "name": "devcontainer",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
+    "dockerfile": "../images/devcontainer/Dockerfile",
+    "context": "..",
+    "cacheFrom": [
+      "type=registry,ref=ghcr.io/ebizbase/devcontainer:node"
+    ]
   },
   "mounts": [
     "source=dev-infra-pnpm,target=/var/lib/pnpm,type=volume",
