@@ -55,8 +55,8 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings
 # Install trunk.io
 RUN curl https://get.trunk.io -fsSL | bash
 
-COPY .devcontainer/p10k.zsh  /root/.p10k.zsh
-COPY --chmod=0755 .devcontainer/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY images/devcontainer/p10k.zsh  /root/.p10k.zsh
+COPY --chmod=0755 images/devcontainer/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
