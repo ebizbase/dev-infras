@@ -1,0 +1,89 @@
+{
+  "name": "devcontainer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "images/devcontainer",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build-base": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "tags": ["devcontainer:base"],
+        "outputs": ["type=docker"],
+        "target": "base"
+      }
+    },
+    "build-node": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "tags": ["devcontainer:node"],
+        "outputs": ["type=docker"],
+        "target": "node"
+      }
+    },
+    "analyze-base": {
+      "dependsOn": ["devcontainer:build-base"],
+      "executor": "@ebizbase/nx-docker:analyze",
+      "options": {
+        "ci": true,
+        "image": "devcontainer:base"
+      }
+    },
+    "analyze-node": {
+      "dependsOn": ["devcontainer:build-node"],
+      "executor": "@ebizbase/nx-docker:analyze",
+      "options": {
+        "ci": true,
+        "image": "devcontainer:node"
+      }
+    },
+    "test-base": {
+      "dependsOn": ["devcontainer:analyze-base"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": [
+          "docker run --privileged --rm devcontainer:base zsh --version && git version && git lfs version && docker buildx version && docker info"
+        ]
+      }
+    },
+    "test-node": {
+      "dependsOn": ["devcontainer:analyze-node"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": [
+          "docker run --privileged --rm devcontainer:node node --version && pnpm --version"
+        ]
+      }
+    },
+    "test": {
+      "dependsOn": ["devcontainer:test-base", "devcontainer:test-node"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo Done!"
+      }
+    },
+    "publish-base": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "tags": ["ghcr.io/ebizbase/devcontainer:base"],
+        "outputs": ["type=registry"],
+        "target": "base"
+      }
+    },
+    "publish-node": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "tags": ["ghcr.io/ebizbase/devcontainer:node"],
+        "outputs": ["type=registry"],
+        "target": "node"
+      }
+    },
+    "publish": {
+      "dependsOn": ["devcontainer:publish-base", "devcontainer:publish-node"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo Done!"
+      }
+    }
+  }
+}
