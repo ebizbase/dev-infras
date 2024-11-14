@@ -2,14 +2,14 @@
 # trunk-ignore-all(checkov/CKV_DOCKER_3)
 FROM debian:bookworm-slim@sha256:36e591f228bb9b99348f584e83f16e012c33ba5cad44ef5981a1d7c0a93eca22 AS base
 
-LABEL org.opencontainers.image.vendor "eBizBase"
-LABEL org.opencontainers.image.licenses "MIT"
-LABEL org.opencontainers.image.source "https://github.com/ebizbase/dev-infras"
-LABEL org.opencontainers.image.title "ebizbase/devcontainer"
+LABEL org.opencontainers.image.vendor="eBizBase"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.source="https://github.com/ebizbase/dev-infras"
+LABEL org.opencontainers.image.title="ebizbase/devcontainer"
 
 
-LABEL org.opencontainers.image.documentation "https://github.com/ebizbase/dev-infras/blob/main/images/devcontainer/README.md"
-LABEL org.opencontainers.image.description "The ebizbase base devcontainer image"
+LABEL org.opencontainers.image.documentation="https://github.com/ebizbase/dev-infras/blob/main/images/devcontainer/README.md"
+LABEL org.opencontainers.image.description="The ebizbase base devcontainer image"
 
 ENV SHELL=/bin/zsh
 
@@ -69,8 +69,8 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s CMD docker ps
 
 FROM base AS node
 
-LABEL org.opencontainers.image.documentation "https://github.com/ebizbase/dev-infras/blob/main/images/devcontainer/README.md"
-LABEL org.opencontainers.image.description "The ebizbase nodejs enviroment devcontainer image"
+LABEL org.opencontainers.image.documentation="https://github.com/ebizbase/dev-infras/blob/main/images/devcontainer/README.md"
+LABEL org.opencontainers.image.description="The ebizbase nodejs enviroment devcontainer image"
 
 ENV NX_DAEMON=true
 ENV PNPM_HOME=/var/lib/pnpm

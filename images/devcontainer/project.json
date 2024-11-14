@@ -62,27 +62,21 @@
         "command": "echo Done!"
       }
     },
-    "publish-base": {
+    "publish-build": {
       "executor": "@ebizbase/nx-docker:build",
       "options": {
-        "tags": ["ghcr.io/ebizbase/devcontainer:base"],
-        "outputs": ["type=registry"],
-        "target": "base"
-      }
-    },
-    "publish-node": {
-      "executor": "@ebizbase/nx-docker:build",
-      "options": {
-        "tags": ["ghcr.io/ebizbase/devcontainer:node"],
-        "outputs": ["type=registry"],
-        "target": "node"
+        "outputs": ["type=registry"]
       }
     },
     "publish": {
-      "dependsOn": ["devcontainer:publish-base", "devcontainer:publish-node"],
+      "dependsOn": [],
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo Done!"
+        "commands": [
+          "nx run devcontainer:publish-build --target base --tags ghcr.io/ebizbase/devcontainer:base --tags ghcr.io/ebizbase/devcontainer:base-$(node scripts/release-version.js images/devcontainer | jq -r .major) --tags ghcr.io/ebizbase/devcontainer:base-$(node scripts/release-version.js images/devcontainer | jq -r .major).$(node scripts/release-version.js images/devcontainer | jq -r .minor) --tags ghcr.io/ebizbase/devcontainer:base-$(node scripts/release-version.js images/devcontainer | jq -r .major).$(node scripts/release-version.js images/devcontainer | jq -r .minor).$(node scripts/release-version.js images/devcontainer | jq -r .patch)",
+          "nx run devcontainer:publish-build --target node --tags ghcr.io/ebizbase/devcontainer:node --tags ghcr.io/ebizbase/devcontainer:node-$(node scripts/release-version.js images/devcontainer | jq -r .major) --tags ghcr.io/ebizbase/devcontainer:node-$(node scripts/release-version.js images/devcontainer | jq -r .major).$(node scripts/release-version.js images/devcontainer | jq -r .minor) --tags ghcr.io/ebizbase/devcontainer:node-$(node scripts/release-version.js images/devcontainer | jq -r .major).$(node scripts/release-version.js images/devcontainer | jq -r .minor).$(node scripts/release-version.js images/devcontainer | jq -r .patch)"
+        ],
+        "parallel": false
       }
     }
   }
