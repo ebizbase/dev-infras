@@ -9,8 +9,12 @@
   "include-component-in-tag": true,
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
+  "initial-version": "0.0.1",
   "packages": {
     "devcontainer-images/universal-devcontainer": {
+      "release-type": "simple"
+    },
+    "devcontainer-images/playwright-devcontainer": {
       "release-type": "simple"
     }
   }
