@@ -19,22 +19,22 @@
       }
     },
     "test": {
-      "dependsOn": ["devcontainer:build"],
+      "dependsOn": ["universal-devcontainer:build"],
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker run --rm devcontainer:edge zsh --version",
-          "docker run --rm devcontainer:edge git --version",
-          "docker run --rm devcontainer:edge git lfs --version",
-          "docker run --rm devcontainer:edge trunk --version",
-          "docker run --rm devcontainer:edge node --version",
-          "docker run --rm devcontainer:edge npm --version",
-          "docker run --rm devcontainer:edge pnpm --version",
-          "docker run --rm devcontainer:edge yarn --version",
-          "docker run --rm devcontainer:edge bun --version",
-          "docker run --rm devcontainer:edge docker --version",
-          "docker run --rm devcontainer:edge docker buildx version",
-          "docker run --rm devcontainer:edge docker compose version"
+          "docker run --rm universal-devcontainer:edge zsh --version",
+          "docker run --rm universal-devcontainer:edge git --version",
+          "docker run --rm universal-devcontainer:edge git lfs --version",
+          "docker run --rm universal-devcontainer:edge trunk --version",
+          "docker run --rm universal-devcontainer:edge node --version",
+          "docker run --rm universal-devcontainer:edge npm --version",
+          "docker run --rm universal-devcontainer:edge pnpm --version",
+          "docker run --rm universal-devcontainer:edge yarn --version",
+          "docker run --rm universal-devcontainer:edge bun --version",
+          "docker run --rm universal-devcontainer:edge docker --version",
+          "docker run --rm universal-devcontainer:edge docker buildx version",
+          "docker run --rm universal-devcontainer:edge docker compose version"
         ],
         "parallel": false
       }
