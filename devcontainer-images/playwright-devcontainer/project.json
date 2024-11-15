@@ -1,0 +1,50 @@
+{
+  "name": "playwright-devcontainer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "devcontainer-images/playwright-devcontainer",
+  "projectType": "application",
+  "metadata": {
+    "org.opencontainers.image.description": "Playwright devcontainer image for ebizbase"
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "dependsOn": [],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "devcontainer build --experimental-lockfile --workspace-folder universal-devcontainer/devcontainer --image-name=universal-devcontainer:edge"
+        ],
+        "parallel": false
+      }
+    },
+    "test": {
+      "dependsOn": ["devcontainer:build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker run --rm devcontainer:edge zsh --version",
+          "docker run --rm devcontainer:edge git --version",
+          "docker run --rm devcontainer:edge git lfs --version",
+          "docker run --rm devcontainer:edge trunk --version",
+          "docker run --rm devcontainer:edge node --version",
+          "docker run --rm devcontainer:edge npm --version",
+          "docker run --rm devcontainer:edge pnpm --version",
+          "docker run --rm devcontainer:edge yarn --version",
+          "docker run --rm devcontainer:edge bun --version",
+          "docker run --rm devcontainer:edge docker --version",
+          "docker run --rm devcontainer:edge docker buildx version",
+          "docker run --rm devcontainer:edge docker compose version"
+        ],
+        "parallel": false
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node ./scripts/publish.js devcontainer-images/universal-devcontainer ebizbase/universal-devcontainer:{version} true",
+        "parallel": false
+      }
+    }
+  }
+}
