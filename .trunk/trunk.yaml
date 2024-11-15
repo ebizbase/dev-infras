@@ -56,7 +56,7 @@ actions:
     - id: commit-msg-check
       display_name: Commit Message Check
       description: Commit message check
-      run: pnpm exec commitlint --edit ${1}
+      run: npx commitlint --edit ${1}
       triggers:
         - git_hooks: [commit-msg]
   enabled:

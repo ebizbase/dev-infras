@@ -45,8 +45,8 @@ jobs:
       - name: Get projects should run unit test and e2e test
         id: extractor
         run: |
-          tests=$(pnpm exec nx show projects --affected --base=upstream/main --with-target test --json | jq -r '.[]')
-          e2es=$(pnpm exec nx show projects --affected --base=upstream/main --with-target e2e --json | jq -r '.[]')
+          tests=$(npx nx show projects --affected --base=upstream/main --with-target test --json | jq -r '.[]')
+          e2es=$(npx nx show projects --affected --base=upstream/main --with-target e2e --json | jq -r '.[]')
           echo "Should test projects: $tests"
           echo "Should e2e projects: $e2es"
           echo "test-projects=$(printf '%s\n' "${tests[@]}" | jq -R . | jq -s . | jq -c .)" >> $GITHUB_OUTPUT
@@ -73,7 +73,7 @@ jobs:
           dependencies: true
           buildx: true
       - name: Run unit test
-        run: pnpm exec nx run ${{ matrix.project }}:test
+        run: npx run ${{ matrix.project }}:test
 
 
   e2e-tests:
@@ -96,7 +96,7 @@ jobs:
           dependencies: true
           buildx: true
       - name: Run unit e2e
-        run: pnpm exec nx run ${{ matrix.project }}:e2e
+        run: npx nx run ${{ matrix.project }}:e2e
 
   checks:
     name: Create github checks for test results
@@ -110,7 +110,6 @@ jobs:
           name: Unit Test Check
           conclusion: ${{needs.unit-tests.result == 'skipped' && 'success' || needs.unit-tests.result}}
       - uses: LouisBrunner/checks-action@v2.0.0
-        if: needs.e2e-tests.result != 'skipped'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: E2E Test Check
