@@ -14,7 +14,7 @@ repo:
 plugins:
   sources:
     - id: trunk
-      ref: v1.6.4
+      ref: v1.6.5
       uri: https://github.com/trunk-io/plugins
 # Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
 runtimes:
@@ -29,27 +29,27 @@ lint:
       paths:
         - '**/CHANGELOG.md'
   enabled:
-    - gitleaks@8.21.1
+    - gitleaks@8.21.2
     - sort-package-json@2.10.1
     - oxipng@9.1.2
     - trivy@0.56.2
     - stylelint@16.10.0
     - dotenv-linter@3.3.0
-    - buf-breaking@1.46.0
-    - buf-lint@1.46.0
-    - buf-format@1.46.0
+    - buf-breaking@1.47.2
+    - buf-lint@1.47.2
+    - buf-format@1.47.2
     - actionlint@1.7.4
-    - checkov@3.2.282
+    - checkov@3.2.296
     - eslint@9.14.0
     - git-diff-check
-    - hadolint@2.12.0
+    - hadolint@2.12.1-beta
     - markdownlint@0.42.0
     - osv-scanner@1.9.1
     - prettier@3.3.3
-    - renovate@39.7.5
+    - renovate@39.16.0
     - shellcheck@0.10.0
     - shfmt@3.6.0
-    - trufflehog@3.83.5
+    - trufflehog@3.83.6
     - yamllint@1.35.1
 actions:
   definitions:
