@@ -1,3 +1,5 @@
+<!-- trunk-ignore-all(markdownlint/MD041) -->
+
 <a id="readme-top"></a>
 
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
@@ -36,13 +38,7 @@ Don't forget to give the project a star! Thanks again!
 
 See [Contribution Guidelines][contribution-guidelines-url] for more information.
 
-## License
-
-Distributed under the MIT License. See [LICENSE][license-url] for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Top contributors:
+### Contributors
 
 <a href="https://github.com/ebizbase/dev-infras/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ebizbase/dev-infras" alt="ebizbase/dev-infras top contributors" />
@@ -50,14 +46,22 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## License
+
+Distributed under the MIT License. See [LICENSE][license-url] for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 [codefactor-shield]: https://img.shields.io/codefactor/grade/github/ebizbase/dev-infras?style=for-the-badge
 [codefactor-url]: https://www.codefactor.io/repository/github/ebizbase/dev-infras
-[contributors-shield]: https://img.shields.io/github/contributors/ebizbase/dev-infras.svg?style=for-the-badge
+
+<!-- [contributors-shield]: https://img.shields.io/github/contributors/ebizbase/dev-infras.svg?style=for-the-badge
 [contributors-url]: https://github.com/ebizbase/dev-infras/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ebizbase/dev-infras.svg?style=for-the-badge
 [forks-url]: https://github.com/ebizbase/dev-infras/network/members
 [stars-shield]: https://img.shields.io/github/stars/ebizbase/dev-infras.svg?style=for-the-badge
-[stars-url]: https://github.com/ebizbase/dev-infras/stargazers
+[stars-url]: https://github.com/ebizbase/dev-infras/stargazers -->
+
 [issues-shield]: https://img.shields.io/github/issues/ebizbase/dev-infras.svg?style=for-the-badge
 [issues-url]: https://github.com/ebizbase/dev-infras/issues
 [license-shield]: https://img.shields.io/github/license/ebizbase/dev-infras.svg?style=for-the-badge

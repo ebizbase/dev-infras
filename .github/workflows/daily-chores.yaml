@@ -56,4 +56,3 @@ jobs:
               echo "Issue #${issue} has recent comments within the last 30 days."
             fi
           done
-
