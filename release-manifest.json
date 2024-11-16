@@ -1,4 +1,4 @@
 {
   "devcontainer-images/universal-devcontainer": "0.0.0",
-  "devcontainer-images/playwright-devcontainer": "0.0.0"
+  "devcontainer-images/playwright-devcontainer": "0.0.1"
 }
