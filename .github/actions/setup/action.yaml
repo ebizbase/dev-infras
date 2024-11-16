@@ -15,7 +15,7 @@ runs:
       with:
         node-version: lts/*
 
-    - uses: actions/cache@v4
+    - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
       if: ${{ inputs.dependencies == 'true' }}
       with:
         path: ~/.bun/install/cache
@@ -25,7 +25,7 @@ runs:
 
     - name: Setup Bun
       if: ${{ inputs.dependencies == 'true' }}
-      uses: oven-sh/setup-bun@v2
+      uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
 
     - name: Install npm dependencies
       if: ${{ inputs.dependencies == 'true' }}
