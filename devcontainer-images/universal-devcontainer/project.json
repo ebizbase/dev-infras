@@ -13,7 +13,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "devcontainer build --experimental-lockfile --workspace-folder universal-devcontainer/devcontainer --image-name=universal-devcontainer:edge"
+          "devcontainer build --experimental-lockfile --workspace-folder devcontainer-images/universal-devcontainer --image-name=universal-devcontainer:edge"
         ],
         "parallel": false
       }
