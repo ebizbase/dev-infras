@@ -1,5 +1,10 @@
-# Prettier friendly markdownlint config (all formatting rules disabled)
-$schema: https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json
-extends: markdownlint/style/prettier
-MD033: false
-MD034: false
+# Autoformatter friendly markdownlint config (all formatting rules disabled)
+default: true
+blank_lines: false
+bullet: false
+html: false
+indentation: false
+line_length: false
+spaces: false
+url: false
+whitespace: false

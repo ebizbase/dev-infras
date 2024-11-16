@@ -13,7 +13,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "devcontainer build --experimental-lockfile --workspace-folder playwright-devcontainer/devcontainer --image-name=playwright-devcontainer:edge"
+          "devcontainer build --experimental-lockfile --workspace-folder devcontainer-images/playwright-devcontainer --image-name=playwright-devcontainer:edge"
         ],
         "parallel": false
       }
