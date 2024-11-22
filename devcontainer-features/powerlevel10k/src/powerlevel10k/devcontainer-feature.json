@@ -1,0 +1,32 @@
+{
+  "id": "powerlevel10k",
+  "version": "0.0.4",
+  "name": "powerlevel10k setup and activate",
+  "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/powerlevel10k/README.md",
+  "description": "Setup and activate powerlevel10k devcontainer feature",
+  "options": {
+    "config": {
+      "type": "string",
+      "default": "https://raw.githubusercontent.com/ebizbase/dev-infras/refs/heads/main/devcontainer-features/powerlevel10k/p10k.zsh",
+      "description": "Powerlevel10k configuration file url"
+    },
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Powerlevel10k version"
+    },
+    "deletePreinstalledThemes": {
+      "type": "boolean",
+      "default": false,
+      "description": "Should delete pre installed themes or not"
+    },
+    "debug": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable debug mode (Internal use)"
+    }
+  },
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils": {}
+  }
+}

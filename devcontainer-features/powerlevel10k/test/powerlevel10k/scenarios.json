@@ -1,0 +1,31 @@
+{
+  "default": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "powerlevel10k": {
+        "debug": true
+      }
+    }
+  },
+  "8color": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "root",
+    "features": {
+      "powerlevel10k": {
+        "config": "https://github.com/romkatv/powerlevel10k/blob/master/config/p10k-lean-8colors.zsh",
+        "debug": true
+      }
+    }
+  },
+  "delete": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "root",
+    "features": {
+      "powerlevel10k": {
+        "debug": true,
+        "deleteOtherThemes": true
+      }
+    }
+  }
+}
