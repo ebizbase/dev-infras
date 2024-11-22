@@ -1,6 +1,6 @@
 {
   "name": "@ebizbase/nx-devkit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "The nx devkit utils",
   "bugs": "https://github.com/ebizbase/dev-infras/issues",
