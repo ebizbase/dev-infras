@@ -4,6 +4,6 @@
   "packages/nx-docker": "1.0.0",
   "packages/nx-dive": "1.0.0",
   "devcontainer-features/powerlevel10k": "0.0.0",
-  "devcontainer-features/omz-plugin": "0.0.0",
+  "devcontainer-features/omz-plugin": "1.0.0",
   "devcontainer-features/install-npm-package-globally": "0.0.0"
 }
