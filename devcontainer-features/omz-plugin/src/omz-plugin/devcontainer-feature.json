@@ -1,6 +1,6 @@
 {
   "id": "omz-plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "name": "Oh My Zsh plugins activate and setup",
   "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/omz-plugin/README.md",
   "description": "Setup and activate oh my zsh plugins devcontainer feature",
