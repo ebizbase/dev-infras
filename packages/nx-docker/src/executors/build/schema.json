@@ -4,10 +4,6 @@
   "title": "docker build executor schema",
   "type": "object",
   "properties": {
-    "ci": {
-      "type": "boolean",
-      "default": false
-    },
     "outputs": {
       "type": "array",
       "items": {
