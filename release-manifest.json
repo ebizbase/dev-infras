@@ -1,5 +1,6 @@
 {
   ".": "0.0.0",
   "packages/nx-devkit": "1.0.0",
-  "packages/nx-docker": "0.0.0"
+  "packages/nx-docker": "0.0.0",
+  "packages/nx-dive": "0.0.0"
 }

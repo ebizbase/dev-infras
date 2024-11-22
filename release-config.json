@@ -13,6 +13,9 @@
     },
     "packages/nx-docker": {
       "release-type": "node"
+    },
+    "packages/nx-dive": {
+      "release-type": "node"
     }
   }
 }

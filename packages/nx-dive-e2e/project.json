@@ -1,0 +1,27 @@
+{
+  "name": "nx-dive-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-dive-e2e",
+  "projectType": "application",
+  "tags": [],
+  "implicitDependencies": [
+    "nx-dive"
+  ],
+  "targets": {
+    "test-pass": {
+      "executor": "@ebizbase/nx-dive:analyze",
+      "options": {
+        "image": "alpine",
+        "ci": true
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run nx-dive-e2e:test-pass"
+        ]
+      }
+    }
+  }
+}

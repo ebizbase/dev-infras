@@ -1,0 +1,41 @@
+{
+  "name": "nx-dive",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-dive/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-dive",
+        "main": "packages/nx-dive/src/index.ts",
+        "tsConfig": "packages/nx-dive/tsconfig.lib.json",
+        "assets": [
+          "packages/nx-dive/*.md",
+          {
+            "input": "./packages/nx-dive/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-dive/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-dive",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx-dive",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
