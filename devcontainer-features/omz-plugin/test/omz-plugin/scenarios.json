@@ -1,0 +1,47 @@
+{
+  "default": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "omz-plugin": {
+        "debug": true
+      }
+    }
+  },
+  "active": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "root",
+    "features": {
+      "omz-plugin": {
+        "preInstalledPlugins": ["git", "git-auto-fetch"],
+        "debug": true
+      }
+    }
+  },
+  "install": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "root",
+    "features": {
+      "omz-plugin": {
+        "customPlugins": [
+          "zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting.git",
+          "zsh-autosuggestions:https://github.com/zsh-users/zsh-autosuggestions/archive/refs/tags/v0.7.1.zip"
+        ],
+        "debug": true
+      }
+    }
+  },
+  "delete": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "omz-plugin": {
+        "customPlugins": [
+          "zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting.git"
+        ],
+        "deleteInactive": true,
+        "debug": true
+      }
+    }
+  }
+}

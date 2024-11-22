@@ -1,0 +1,32 @@
+{
+  "id": "omz-plugin",
+  "version": "0.1.0",
+  "name": "Oh My Zsh plugins activate and setup",
+  "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/omz-plugin/README.md",
+  "description": "Setup and activate oh my zsh plugins devcontainer feature",
+  "options": {
+    "preInstalledPlugins": {
+      "type": "string",
+      "default": "git",
+      "description": "The list of pre-installed oh-my-zsh plugins to active (e.g. git)"
+    },
+    "customPlugins": {
+      "type": "string",
+      "default": "",
+      "description": "The list of custom plugin you want to install with plugin-name1:url1,plugin-name2:url1 (e.g. zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting/archive/refs/tags/0.8.0.zip). We support zip file url or git repository url"
+    },
+    "deleteInactive": {
+      "type": "boolean",
+      "default": false,
+      "description": "Should delete inactive plugins or not"
+    },
+    "debug": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable debug mode (Internal use)"
+    }
+  },
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils": {}
+  }
+}
