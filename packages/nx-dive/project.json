@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/packages/nx-dive",
         "main": "packages/nx-dive/src/index.ts",
@@ -36,6 +38,16 @@
           }
         ]
       }
-    }
+    },
+    "publish": {
+      "dependsOn": [
+        "nx-dive:build"
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/packages/nx-dive",
+        "command": "npm publish"
+      }
+    },
   }
 }
