@@ -16,6 +16,36 @@
     },
     "packages/nx-dive": {
       "release-type": "node"
+    },
+    "devcontainer-features/install-npm-package-globally": {
+      "package-name": "install-npm-package-globally",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "src/install-npm-package-globally/devcontainer-feature.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "devcontainer-features/omz-plugin": {
+      "package-name": "omz-plugin",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "src/omz-plugin/devcontainer-feature.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "devcontainer-features/powerlevel10k": {
+      "package-name": "powerlevel10k",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "src/powerlevel10k/devcontainer-feature.json",
+          "jsonpath": "$.version"
+        }
+      ]
     }
   }
 }
