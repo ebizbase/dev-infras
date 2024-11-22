@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/generators/library/files/angular/jest.config.ts.template",
+    "src/generators/library/files/angular/src/test-setup.ts.template",
+    "src/generators/library/files/angular/src/lib/nglib/__name__.component.ts.template"
+  ],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}
