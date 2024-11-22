@@ -32,6 +32,9 @@
     "paths": {
       "@ebizbase/nx-internal": [
         "tools/nx-internal/src/index.ts"
+      ],
+      "@ebizbase/nx-devkit": [
+        "packages/nx-devkit/src/index.ts"
       ]
     }
   },

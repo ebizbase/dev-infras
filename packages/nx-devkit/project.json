@@ -1,0 +1,34 @@
+{
+  "name": "nx-devkit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-devkit/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-devkit",
+        "main": "packages/nx-devkit/src/index.ts",
+        "tsConfig": "packages/nx-devkit/tsconfig.lib.json",
+        "assets": ["packages/nx-devkit/.npmrc", "packages/nx-devkit/*.md"]
+      }
+    },
+    "publish": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/packages/nx-devkit",
+        "command": "npm publish"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular",
+        "trackDeps": true
+      }
+    }
+  }
+}
