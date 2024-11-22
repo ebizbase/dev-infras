@@ -1,6 +1,6 @@
 {
   "id": "install-npm-package-globally",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "name": "Installs an npm packages globally",
   "description": "Installs an npm packages globally via npm feature",
   "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/npm-global-package/README.md",
