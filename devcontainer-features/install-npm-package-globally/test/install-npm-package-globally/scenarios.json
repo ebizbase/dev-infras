@@ -1,0 +1,29 @@
+{
+  "latest": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "install-npm-package-globally": {
+        "packages": ["ts-node"]
+      }
+    }
+  },
+  "specific-version": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "install-npm-package-globally": {
+        "packages": ["ts-node@9.1.1"]
+      }
+    }
+  },
+  "semver-version": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "remoteUser": "vscode",
+    "features": {
+      "install-npm-package-globally": {
+        "packages": ["ts-node@~8.10.0"]
+      }
+    }
+  }
+}
