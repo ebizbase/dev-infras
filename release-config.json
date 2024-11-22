@@ -10,6 +10,9 @@
     },
     "packages/nx-devkit": {
       "release-type": "node"
+    },
+    "packages/nx-docker": {
+      "release-type": "node"
     }
   }
 }

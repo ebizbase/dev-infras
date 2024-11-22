@@ -1,0 +1,39 @@
+{
+  "name": "nx-docker-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-docker-e2e",
+  "projectType": "application",
+  "tags": [],
+  "implicitDependencies": [
+    "nx-docker"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "tags": [
+          "nx-docker-e2e:test"
+        ],
+        "outputs": [
+          "type=docker"
+        ],
+        "args": [
+          "ALPINE_VERSION=3.20.3"
+        ],
+        "metadataFile": "dist/packages/nx-docker-e2e/metadata.json"
+      }
+    },
+    "e2e": {
+      "dependsOn": [
+        "nx-docker-e2e:build"
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker run --rm nx-docker-e2e:test cat /etc/alpine-release | grep 3.20.3",
+          "cat dist/packages/nx-docker-e2e/metadata.json | jq ."
+        ]
+      }
+    }
+  }
+}

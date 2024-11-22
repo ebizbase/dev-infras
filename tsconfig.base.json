@@ -22,24 +22,15 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ebizbase/nx-internal": [
-        "tools/nx-internal/src/index.ts"
-      ],
-      "@ebizbase/nx-devkit": [
-        "packages/nx-devkit/src/index.ts"
-      ]
+      "@ebizbase/nx-devkit": ["packages/nx-devkit/src/index.ts"],
+      "@ebizbase/nx-docker": ["packages/nx-docker/src/index.ts"],
+      "@ebizbase/nx-internal": ["tools/nx-internal/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

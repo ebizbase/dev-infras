@@ -1,0 +1,39 @@
+{
+  "name": "nx-docker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-docker/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-docker",
+        "main": "packages/nx-docker/index.ts",
+        "tsConfig": "packages/nx-docker/tsconfig.lib.json",
+        "assets": [
+          "packages/nx-docker/*.md",
+          "packages/nx-docker/src/**/*.json",
+          "packages/nx-docker/src/**/*.d.ts",
+          "packages/nx-docker/executors.json",
+          "packages/nx-docker/generators.json"
+        ]
+      }
+    },
+    "publish": {
+      "dependsOn": ["nx-docker:build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/packages/nx-docker",
+        "command": "npm publish"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    }
+  }
+}
