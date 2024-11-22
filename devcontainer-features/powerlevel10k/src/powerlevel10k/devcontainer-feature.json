@@ -1,6 +1,6 @@
 {
   "id": "powerlevel10k",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "name": "powerlevel10k setup and activate",
   "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/powerlevel10k/README.md",
   "description": "Setup and activate powerlevel10k devcontainer feature",
