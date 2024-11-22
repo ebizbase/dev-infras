@@ -28,12 +28,6 @@
         "cwd": "dist/packages/nx-docker",
         "command": "npm publish"
       }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "angular"
-      }
     }
   }
 }
