@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/ebizbase/dev-infras/compare/nx-docker-v1.0.0...nx-docker-v2.0.0) (2024-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **nx-docker:** The ci options have been removed from build executor.
+
+### Miscellaneous Chores
+
+* **nx-docker:** renove unused ci options ([398f53c](https://github.com/ebizbase/dev-infras/commit/398f53c967f4e58e2fab5e385be627274fc884e5))
+
 ## 1.0.0 (2024-11-22)
 
 
