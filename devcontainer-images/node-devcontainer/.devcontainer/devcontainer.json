@@ -1,0 +1,8 @@
+{
+  "image": "ghcr.io/ebizbase/base-devcontainer:1.0.0",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/michidk/devcontainers-features/bun:1": {}
+  }
+}
