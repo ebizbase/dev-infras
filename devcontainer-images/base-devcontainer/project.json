@@ -1,0 +1,45 @@
+{
+  "name": "base-devcontainer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "devcontainer-images/base-devcontainer",
+  "projectType": "application",
+  "tags": [],
+  "metadata": {
+    "$schema": "../../nx-plugins/nx-devcontainer/metadata.schema.json",
+    "version": "0.0.0",
+    "registries": ["docker.io", "ghcr.io"],
+    "namespace": "ebizbase/base-devcontainer",
+    "labels": {
+      "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
+      "org.opencontainers.image.description": "Base devcontainer image for ebizbase",
+      "org.opencontainers.image.licenses": "MIT"
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@ebizbase/nx-internal:build-devcontainer-image",
+      "options": {
+        "tags": ["edge"]
+      }
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "docker run --rm ebizbase/base-devcontainer:edge zsh --version",
+          "docker run --rm ebizbase/base-devcontainer:edge git --version",
+          "docker run --rm ebizbase/base-devcontainer:edge git lfs --version"
+        ],
+        "parallel": false
+      }
+    },
+    "publish": {
+      "executor": "@ebizbase/nx-internal:build-devcontainer-image",
+      "options": {
+        "push": true,
+        "tags": ["latest", "{major}", "{major}.{minor}", "{major}.{minor}.{patch}"]
+      }
+    }
+  }
+}

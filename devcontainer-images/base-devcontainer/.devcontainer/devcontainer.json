@@ -1,0 +1,35 @@
+{
+  "image": "debian:bookworm-slim",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "installOhMyZsh": "true",
+      "configureZshAsDefaultShell": true,
+      "installOhMyZshConfig": true,
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "true"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "autoPull": true
+    },
+    "ghcr.io/ebizbase/devcontainer-features/omz-plugin:1.0.0": {
+      "preInstalledPlugins": [
+        "git",
+        "git-auto-fetch"
+      ],
+      "customPlugins": [
+        "zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting.git",
+        "you-should-use:https://github.com/MichaelAquilina/zsh-you-should-use.git",
+        "zsh-autosuggestions:https://github.com/zsh-users/zsh-autosuggestions/archive/refs/tags/v0.7.1.zip"
+      ],
+      "deleteInactive": true
+    },
+    "ghcr.io/ebizbase/devcontainer-features/powerlevel10k:1.0.0": {
+      "deletePreinstalledThemes": true
+    }
+  }
+}
