@@ -1,6 +1,6 @@
 {
   "id": "npm-playwright",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "name": "Playwright (via npm)",
   "description": "Install playwright via npm with os dependencies and browser binaries",
   "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/npm-playwright/README.md",
