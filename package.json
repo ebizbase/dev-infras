@@ -58,5 +58,6 @@
       "npx prettier --write"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0"
 }
