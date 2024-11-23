@@ -8,7 +8,7 @@ Install latest version
 
 ```json
 "features": {
-  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:0": {
+  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:1": {
     "packages": ["ts-node"]
   }
 }
@@ -18,7 +18,7 @@ Install specific version
 
 ```json
 "features": {
-  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:0": {
+  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:1": {
     "packages": ["ts-node@10.9.2"]
   }
 }
@@ -28,7 +28,7 @@ Install semver version
 
 ```json
 "features": {
-  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:0": {
+  "ghcr.io/ebizbase/devcontainer-features/install-npm-package-globally:1": {
     "packages": ["ts-node@~10.9.2"]
   }
 }
