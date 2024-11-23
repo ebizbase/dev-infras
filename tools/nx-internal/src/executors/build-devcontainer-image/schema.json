@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Build executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "workspaceFolder": {
+      "type": "string",
+      "default": ".",
+      "description": "The workspace folder to build the image (The parrent directory contain .devcontainer/devcontainer.json)"
+    },
+    "registries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["docker.io"],
+      "description": "The registry to push the image"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z-.]+)?$",
+      "description": "Semantic version of the configuration"
+    },
+    "namespace": {
+      "type": "string",
+      "description": "Namespace and name for the devcontainer image in the registry"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The tag of the image to build"
+    },
+    "push": {
+      "type": "boolean",
+      "default": false,
+      "description": "Push the image to the registry"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The list of labels to add to the image"
+    }
+  },
+  "required": ["tags"]
+}

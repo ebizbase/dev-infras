@@ -1,5 +1,10 @@
 {
   "executors": {
+    "build-devcontainer-image": {
+      "implementation": "./src/executors/build-devcontainer-image/executor",
+      "schema": "./src/executors/build-devcontainer-image/schema.json",
+      "description": "build devcontainer image executor"
+    },
     "test-devcontainer-feature": {
       "implementation": "./src/executors/test-devcontainer-feature/executor",
       "schema": "./src/executors/test-devcontainer-feature/schema.json",
