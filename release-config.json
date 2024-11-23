@@ -48,7 +48,24 @@
       ]
     },
     "devcontainer-images/base-devcontainer": {
-      "release-type": "node"
+      "release-type": "node",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
+    },
+    "devcontainer-images/node-devcontainer": {
+      "release-type": "node",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }
