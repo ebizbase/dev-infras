@@ -16,17 +16,36 @@ This project is mainly used internally within ebizbase projects but we have deci
 
 ## List of packages
 
-| Name                                                                | Type                 | Description                                                                                     |
-| ------------------------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------- |
-| [omz-plugin][omz-plugin-readme]                                     | devcontainer feature | This feature will install and active plugins for oh my zsh                                      |
-| [install-npm-package-globally][install-npm-package-globally-readme] | devcontainer feature | This feature will be install npm packages globally                                              |
-| [powerlevel10k][powerlevel10k-readme]                               | devcontainer feature | This feature will install, activate and config powerlevel10k theme for oh my zsh                |
-| base-devcontainer                                                   | devcontainer image   | Base on ubuntu image with git,zsh (with modern features)        |
-| node-devcontainer                                              | devcontainer image   | Base on base-devcontainer with node, npm, yarn,pnpm, bun                            |
-| nx-devcontainer                                              | devcontainer image   | Base on node-devcontainer with nx tools                      | 
-| playwright-devcontainer                                             | devcontainer image   | Base on node-devcontainer with playwright install (both os dependecies and browser binary) |
-| nx-playwright-devcontainer                                             | devcontainer image   | Base on nx-devcontainer with docker in docker and playwright install (both os dependecies and browser binary) |
-| [nx-docker][nx-docker-readme]                                       | nx plugin            | The NX plugin to build, push and analyze image                                                  |
+### devcontainer features
+
+| Name       | Description|
+| ---------- | ---------- | 
+| [omz-plugin][omz-plugin-readme] | This feature will install and active plugins for oh my zsh                                      |
+| [install-npm-package-globally][install-npm-package-globally-readme] | This feature will be install npm packages globally |
+| [powerlevel10k][powerlevel10k-readme] | This feature will install, activate and config powerlevel10k theme for oh my zsh                |
+| [npm-playwright][npm-playwright-readme] | This feature will be install playwright via npm with os dependencies and browser binaries               |
+
+
+### devconainer prebuild images 
+
+| Name       | Description|
+| ---------- | ---------- | 
+| [base-devcontainer][base-devcontainer-readme]   | The `base-devcontainer` is a prebuild devcontainer image base on debian with common-utils and provide good experiences interacting with the zsh shell        |
+| [node-devcontainer][node-devcontainer-readme]   | The image base on `base-devcontainer` with latest NodeJS LTS version (includes npm, pnpm, yarn, bun)        |
+| [node-dind-devcontainer][node-dind-devcontainer-readme]   |The image base on `node-devcontainer` with docker in docker |
+| [node-dind-playwright-devcontainer][node-dind-playwright-devcontainer-readme]   |The image base on `node-dind-devcontainer` with playwright installed (both OS dependencies and browser binary) |
+[node-playwright-devcontainer][node-playwright-devcontainer-readme]   |The image base on `node-devcontainer` with playwright installed (both OS dependencies and browser binary) |
+
+### npm packages
+| Name       | Description|
+| ---------- | ---------- | 
+| [nx-devkit][nx-devkit-readme]  | The NX plugin to build, push and analyze image |
+
+### nx plugins
+| Name       | Description|
+| ---------- | ---------- | 
+| [nx-docker][nx-docker-readme]  | The NX plugin to build and push docker image  
+| [nx-dive][nx-dive-readme]  | The NX plugin  exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image base on [dive](https://github.com/wagoodman/dive)            
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,7 +81,19 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 [license-shield]: https://img.shields.io/github/license/ebizbase/dev-infras.svg
 [license-url]: https://github.com/ebizbase/dev-infras/blob/main/LICENSE.txt
 [contribution-guidelines-url]: https://github.com/ebizbase/dev-infras/blob/main/CONTRIBUTING.md
+[npm-playwright-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-features/npm-playwright/README.md
 [omz-plugin-readme]: https://github.com/ebizbase/dev-infras/blob/main/devcontainer-features/omz-plugin/README.md
 [install-npm-package-globally-readme]: https://github.com/ebizbase/dev-infras/blob/main/devcontainer-features/install-npm-package-globally/README.md
 [powerlevel10k-readme]: https://github.com/ebizbase/dev-infras/blob/main/devcontainer-features/powerlevel10k/README.md
-[nx-docker-readme]: https://github.com/ebizbase/dev-infras/blob/main/nx-plugins/nx-docker/README.md
+
+[base-devcontainer-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/base-devcontainer/README.md
+[node-devcontainer-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/node-devcontainer/README.md
+[node-dind-devcontainer-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/node-dind-devcontainer/README.md
+[node-playwright-devcontainer-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/node-playwright-devcontainer/README.md
+[node-dind-playwright-devcontainer-readme]:https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/node-dind-playwright-devcontainer/README.md
+
+
+[nx-devkit-readme]: https://github.com/ebizbase/dev-infras/blob/main/packages/nx-devkit/README.md
+
+[nx-docker-readme]: https://github.com/ebizbase/dev-infras/blob/main/packages/nx-docker/README.md
+[nx-dive-readme]: https://github.com/ebizbase/dev-infras/blob/main/packages/nx-dive/README.md
