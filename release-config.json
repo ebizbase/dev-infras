@@ -66,6 +66,16 @@
           "jsonpath": "$.metadata.version"
         }
       ]
+    },
+    "devcontainer-images/nx-devcontainer": {
+      "release-type": "node",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }
