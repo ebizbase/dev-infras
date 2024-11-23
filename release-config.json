@@ -55,7 +55,7 @@
       ]
     },
     "devcontainer-images/base-devcontainer": {
-      "release-type": "node",
+      "package-name": "base-devcontainer",
       "extra-files": [
         {
           "type": "json",
