@@ -1,7 +1,7 @@
 {
   "packages/nx-devkit": "1.0.0",
   "packages/nx-docker": "2.0.0",
-  "packages/nx-dive": "1.0.0",
+  "packages/nx-dive": "1.0.1",
   "devcontainer-features/powerlevel10k": "1.0.0",
   "devcontainer-features/omz-plugin": "1.0.0",
   "devcontainer-features/install-npm-package-globally": "1.0.0",
