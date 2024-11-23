@@ -87,6 +87,16 @@
         }
       ]
     },
+    "devcontainer-images/node-dind-playwright-devcontainer": {
+      "release-type": "node",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
+    },
     "devcontainer-images/node-playwright-devcontainer": {
       "release-type": "node",
       "extra-files": [

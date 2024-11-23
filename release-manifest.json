@@ -10,5 +10,6 @@
   "devcontainer-images/base-devcontainer": "1.0.0",
   "devcontainer-images/node-devcontainer": "1.0.0",
   "devcontainer-images/node-dind-devcontainer": "1.0.0",
+  "devcontainer-images/node-dind-playwright-devcontainer": "0.0.0",
   "devcontainer-images/node-playwright-devcontainer": "1.0.0"
 }

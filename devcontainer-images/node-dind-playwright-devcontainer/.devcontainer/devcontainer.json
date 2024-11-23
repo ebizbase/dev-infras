@@ -1,0 +1,7 @@
+{
+  "image": "ghcr.io/ebizbase/node-dind-devcontainer:1.0.0",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/ebizbase/devcontainer-features/npm-playwright:1": {}
+  }
+}
