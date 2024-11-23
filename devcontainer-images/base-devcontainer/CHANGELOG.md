@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2024-11-23)
+
+
+### Features
+
+* **base-devcontainer:** add base devcontainer ([b8852f4](https://github.com/ebizbase/dev-infras/commit/b8852f4662caf8655bf819db26ddee0ba9f9097a))
+
 ## [0.0.8](https://github.com/ebizbase/dev-infras/compare/base-devcontainer@0.0.7...base-devcontainer@0.0.8) (2024-11-19)
 
 
