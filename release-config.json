@@ -47,6 +47,16 @@
         }
       ]
     },
+    "devcontainer-features/npm-playwright": {
+      "package-name": "npm-playwright",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "src/npm-playwright/devcontainer-feature.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
     "devcontainer-images/base-devcontainer": {
       "release-type": "node",
       "extra-files": [

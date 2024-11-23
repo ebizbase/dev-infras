@@ -1,0 +1,15 @@
+{
+  "name": "npm-playwright",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "devcontainer-features/npm-playwright/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@ebizbase/nx-internal:test-devcontainer-feature"
+    },
+    "publish": {
+      "executor": "@ebizbase/nx-internal:publish-devcontainer-feature"
+    }
+  }
+}

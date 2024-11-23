@@ -1,0 +1,18 @@
+{
+  "id": "npm-playwright",
+  "version": "0.0.0",
+  "name": "Playwright (via npm)",
+  "description": "Install playwright via npm with os dependencies and browser binaries",
+  "documentationURL": "https://github.com/ebizbase/dev-infras/tree/main/devcontainer-features/npm-playwright/README.md",
+  "options": {
+    "debug": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable debug mode (Internal use)"
+    }
+  },
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers/features/node": {}
+  }
+}
