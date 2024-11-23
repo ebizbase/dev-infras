@@ -7,13 +7,12 @@
     "$schema": "../../nx-plugins/nx-devcontainer/metadata.schema.json",
     "version": "1.0.0",
     "registries": [
-      "docker.io",
       "ghcr.io"
     ],
     "namespace": "ebizbase/node-dind-devcontainer",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
-      "org.opencontainers.image.description": "NodeJS devcontainer image for ebizbase",
+      "org.opencontainers.image.description": "The image base on `node-devcontainer` with docker in docker",
       "org.opencontainers.image.licenses": "MIT"
     }
   },
@@ -33,8 +32,8 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker run --rm ebizbase/node-dind-devcontainer:edge node --version",
-          "docker run --rm ebizbase/node-dind-devcontainer:edge docker --version"
+          "docker run --rm ghcr.io/ebizbase/node-dind-devcontainer:edge node --version",
+          "docker run --rm ghcr.io/ebizbase/node-dind-devcontainer:edge docker --version"
         ],
         "parallel": false
       }

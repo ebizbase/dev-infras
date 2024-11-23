@@ -4,16 +4,14 @@
   "sourceRoot": "devcontainer-images/node-devcontainer",
   "projectType": "application",
   "metadata": {
-    "$schema": "../../nx-plugins/nx-devcontainer/metadata.schema.json",
     "version": "1.0.0",
     "registries": [
-      "docker.io",
       "ghcr.io"
     ],
     "namespace": "ebizbase/node-devcontainer",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
-      "org.opencontainers.image.description": "NodeJS devcontainer image for ebizbase",
+      "org.opencontainers.image.description": "The image base on `base-devcontainer` with latest NodeJS LTS version (includes npm, pnpm, yarn, bun)",
       "org.opencontainers.image.licenses": "MIT"
     }
   },
@@ -33,12 +31,12 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker run --rm ebizbase/node-devcontainer:edge node --version",
-          "docker run --rm ebizbase/node-devcontainer:edge npm --version",
-          "docker run --rm ebizbase/node-devcontainer:edge pnpm --version",
-          "docker run --rm ebizbase/node-devcontainer:edge yarn --version",
-          "docker run --rm ebizbase/node-devcontainer:edge bun --version",
-          "docker run --rm ebizbase/node-devcontainer:edge nx --version"
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge node --version",
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge npm --version",
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge pnpm --version",
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge yarn --version",
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge bun --version",
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge nx --version"
         ],
         "parallel": false
       }

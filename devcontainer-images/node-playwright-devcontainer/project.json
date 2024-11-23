@@ -7,13 +7,12 @@
     "$schema": "../../nx-plugins/nx-devcontainer/metadata.schema.json",
     "version": "1.0.0",
     "registries": [
-      "docker.io",
       "ghcr.io"
     ],
     "namespace": "ebizbase/node-playwright-devcontainer",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
-      "org.opencontainers.image.description": "NodeJS devcontainer image for ebizbase",
+      "org.opencontainers.image.description": "The image base on `node-devcontainer` with playwright installed (both OS dependencies and browser binary)",
       "org.opencontainers.image.licenses": "MIT"
     }
   },
@@ -33,7 +32,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker run --rm ebizbase/node-playwright-devcontainer:edge node --version"
+          "docker run --rm ghcr.io/ebizbase/node-playwright-devcontainer:edge node --version"
         ],
         "parallel": false
       }

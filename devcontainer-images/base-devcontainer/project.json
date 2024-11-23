@@ -5,9 +5,8 @@
   "projectType": "application",
   "tags": [],
   "metadata": {
-    "$schema": "../../nx-plugins/nx-devcontainer/metadata.schema.json",
     "version": "1.0.0",
-    "registries": ["docker.io", "ghcr.io"],
+    "registries": ["ghcr.io"],
     "namespace": "ebizbase/base-devcontainer",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
@@ -27,9 +26,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "docker run --rm ebizbase/base-devcontainer:edge zsh --version",
-          "docker run --rm ebizbase/base-devcontainer:edge git --version",
-          "docker run --rm ebizbase/base-devcontainer:edge git lfs --version"
+          "docker run --rm ghcr.io/ebizbase/base-devcontainer:edge zsh --version",
+          "docker run --rm ghcr.io/ebizbase/base-devcontainer:edge git --version",
+          "docker run --rm ghcr.io/ebizbase/base-devcontainer:edge git lfs --version"
         ],
         "parallel": false
       }

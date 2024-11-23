@@ -55,7 +55,7 @@
       ]
     },
     "devcontainer-images/base-devcontainer": {
-      "release-type": "node",
+      "package-name": "base-devcontainer",
       "extra-files": [
         {
           "type": "json",
@@ -65,7 +65,7 @@
       ]
     },
     "devcontainer-images/node-devcontainer": {
-      "release-type": "node",
+      "package-name": "node-devcontainer",
       "extra-files": [
         {
           "type": "json",
@@ -75,7 +75,7 @@
       ]
     },
     "devcontainer-images/node-dind-devcontainer": {
-      "release-type": "node",
+      "package-name": "node-dind-devcontainer",
       "extra-files": [
         {
           "type": "json",
@@ -85,7 +85,7 @@
       ]
     },
     "devcontainer-images/node-dind-playwright-devcontainer": {
-      "release-type": "node",
+      "package-name": "node-dind-playwright-devcontainer",
       "extra-files": [
         {
           "type": "json",
@@ -95,7 +95,7 @@
       ]
     },
     "devcontainer-images/node-playwright-devcontainer": {
-      "release-type": "node",
+      "package-name": "node-playwright-devcontainer",
       "extra-files": [
         {
           "type": "json",
