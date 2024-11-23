@@ -8,5 +8,7 @@
   "devcontainer-features/install-npm-package-globally": "1.0.0",
   "devcontainer-images/base-devcontainer": "1.0.0",
   "devcontainer-images/node-devcontainer": "1.0.0",
-  "devcontainer-images/nx-devcontainer": "0.0.0"
+  "devcontainer-images/nx-devcontainer": "0.0.0",
+  "devcontainer-images/node-dind-devcontainer": "0.0.0"
+
 }

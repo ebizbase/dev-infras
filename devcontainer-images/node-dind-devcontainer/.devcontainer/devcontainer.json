@@ -1,0 +1,7 @@
+{
+  "image": "ghcr.io/ebizbase/node-devcontainer:1.0.0",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  }
+}
