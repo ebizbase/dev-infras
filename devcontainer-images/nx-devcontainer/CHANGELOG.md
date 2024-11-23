@@ -5,6 +5,13 @@
 
 ### Features
 
+* **nx-devcontainer:** add nx-devcontainer image ([9646ea1](https://github.com/ebizbase/dev-infras/commit/9646ea15cf1ed25099d152b40dee260b741b13d2))
+
+## 1.0.0 (2024-11-23)
+
+
+### Features
+
 * **node-devcontainer:** add node devcontainer ([1ef1c2d](https://github.com/ebizbase/dev-infras/commit/1ef1c2d272be16c3af981512c90bbc951923f9af))
 
 ## [0.1.8](https://github.com/ebizbase/dev-infras/compare/universal-devcontainer@0.1.7...universal-devcontainer@0.1.8) (2024-11-19)
