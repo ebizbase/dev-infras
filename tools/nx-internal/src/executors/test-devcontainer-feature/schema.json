@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "TestDevcontainerFeature executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "filter": {
+      "type": "string"
+    }
+  },
+  "required": []
+}

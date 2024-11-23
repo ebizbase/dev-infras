@@ -1,3 +1,14 @@
 {
-  "executors": {}
+  "executors": {
+    "test-devcontainer-feature": {
+      "implementation": "./src/executors/test-devcontainer-feature/executor",
+      "schema": "./src/executors/test-devcontainer-feature/schema.json",
+      "description": "test devcontainer feature executor"
+    },
+    "publish-devcontainer-feature": {
+      "implementation": "./src/executors/publish-devcontainer-feature/executor",
+      "schema": "./src/executors/publish-devcontainer-feature/schema.json",
+      "description": "publish devcontainer feature executor"
+    }
+  }
 }
