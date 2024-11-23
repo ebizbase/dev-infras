@@ -46,6 +46,9 @@
           "jsonpath": "$.version"
         }
       ]
+    },
+    "devcontainer-images/base-devcontainer": {
+      "release-type": "simple"
     }
   }
 }
