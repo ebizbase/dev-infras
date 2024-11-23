@@ -5,9 +5,6 @@
   "separate-pull-requests": true,
   "initial-version": "1.0.0",
   "packages": {
-    ".": {
-      "release-type": "node"
-    },
     "packages/nx-devkit": {
       "release-type": "node"
     },
