@@ -77,7 +77,7 @@
         }
       ]
     },
-    "devcontainer-images/nx-devcontainer": {
+    "devcontainer-images/node-dind-devcontainer": {
       "release-type": "node",
       "extra-files": [
         {
@@ -87,7 +87,7 @@
         }
       ]
     },
-    "devcontainer-images/node-dind-devcontainer": {
+    "devcontainer-images/node-playwright-devcontainer": {
       "release-type": "node",
       "extra-files": [
         {
