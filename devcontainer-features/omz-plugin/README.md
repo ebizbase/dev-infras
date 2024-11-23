@@ -6,7 +6,7 @@ This feature will install and active plugins for oh my zsh
 
 ```json
 "features": {
-  "ghcr.io/ebizbase/devcontainer-features/omz-plugin:0": {
+  "ghcr.io/ebizbase/devcontainer-features/omz-plugin:1": {
     "preInstalledPlugins": ["git", "git-auto-fetch"],
     "customPlugins": [
       "zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting.git",

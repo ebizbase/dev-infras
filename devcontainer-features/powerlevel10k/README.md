@@ -10,7 +10,7 @@ With default config. The result is like the screenshot above. The default config
 
 ```json
 "features": {
-    "ghcr.io/ebizbase/devcontainer-features/powerlevel10k:0": {}
+    "ghcr.io/ebizbase/devcontainer-features/powerlevel10k:1": {}
 }
 ```
 
@@ -18,7 +18,7 @@ You can define custom config file
 
 ```json
 "features": {
-  "ghcr.io/ebizbase/devcontainer-features/powerlevel10k:0": {
+  "ghcr.io/ebizbase/devcontainer-features/powerlevel10k:1": {
     "config": "https://github.com/romkatv/powerlevel10k/blob/master/config/p10k-lean-8colors.zsh"
   }
 }
