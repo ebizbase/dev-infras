@@ -35,8 +35,7 @@
           "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge npm --version",
           "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge pnpm --version",
           "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge yarn --version",
-          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge bun --version",
-          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge nx --version"
+          "docker run --rm ghcr.io/ebizbase/node-devcontainer:edge bun --version"
         ],
         "parallel": false
       }
