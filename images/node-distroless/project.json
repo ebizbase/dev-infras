@@ -3,19 +3,25 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "metadata": {
-    "version": "0.0.0"
+    "version": "1.0.0"
   },
   "tags": [],
   "targets": {
     "build": {
       "executor": "@ebizbase/nx-docker:build",
       "options": {
-        "tags": ["node-distroless:edge"],
-        "outputs": ["type=docker"]
+        "tags": [
+          "node-distroless:edge"
+        ],
+        "outputs": [
+          "type=docker"
+        ]
       }
     },
     "test": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "executor": "nx:run-commands",
       "options": {
         "command": "docker run --rm node-distroless:edge -e 'console.log(process.version)'"
@@ -24,8 +30,12 @@
     "publish": {
       "executor": "@ebizbase/nx-docker:build",
       "options": {
-        "tags": ["ghcr.io/ebizbase/node-distroless"],
-        "outputs": ["type=image"]
+        "tags": [
+          "ghcr.io/ebizbase/node-distroless"
+        ],
+        "outputs": [
+          "type=image"
+        ]
       }
     }
   }

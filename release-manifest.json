@@ -11,5 +11,5 @@
   "devcontainer-images/node-dind-devcontainer": "1.0.0",
   "devcontainer-images/node-dind-playwright-devcontainer": "1.0.0",
   "devcontainer-images/node-playwright-devcontainer": "1.0.0",
-  "images/node-distroless": "0.0.0"
+  "images/node-distroless": "1.0.0"
 }
