@@ -3,6 +3,10 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-docker-e2e",
   "projectType": "application",
+  "metadata": {
+    "version": "1.0.0",
+    "namespace": "nx-docker-e2e"
+  },
   "tags": [],
   "implicitDependencies": [
     "nx-docker"
@@ -12,7 +16,7 @@
       "executor": "@ebizbase/nx-docker:build",
       "options": {
         "tags": [
-          "nx-docker-e2e:test"
+          "test"
         ],
         "outputs": [
           "type=docker"
