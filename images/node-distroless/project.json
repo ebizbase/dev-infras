@@ -20,11 +20,9 @@
     "build": {
       "executor": "@ebizbase/nx-docker:build",
       "options": {
+        "load": true,
         "tags": [
           "edge"
-        ],
-        "outputs": [
-          "type=docker"
         ]
       }
     },
@@ -34,20 +32,18 @@
       ],
       "executor": "nx:run-commands",
       "options": {
-        "command": "docker run --rm node-distroless:edge -e 'console.log(process.version)'"
+        "command": "docker run --rm ebizbase/node-distroless:edge -e 'console.log(process.version)'"
       }
     },
     "publish": {
       "executor": "@ebizbase/nx-docker:build",
       "options": {
+        "push": true,
         "tags": [
           "latest",
           "{major}",
           "{major}.{minor}",
           "{major}.{minor}.{patch}"
-        ],
-        "outputs": [
-          "type=registry"
         ]
       }
     }
