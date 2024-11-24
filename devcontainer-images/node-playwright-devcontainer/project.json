@@ -48,12 +48,6 @@
           "{major}.{minor}.{patch}"
         ]
       }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "angular"
-      }
     }
   }
 }

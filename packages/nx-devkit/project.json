@@ -22,13 +22,6 @@
         "cwd": "dist/packages/nx-devkit",
         "command": "npm publish"
       }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "angular",
-        "trackDeps": true
-      }
     }
   }
 }
