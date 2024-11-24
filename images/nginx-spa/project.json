@@ -1,0 +1,39 @@
+{
+  "name": "nginx-spa",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "metadata": {
+    "version": "1.0.0",
+    "registries": ["ghcr.io", "docker.io"],
+    "namespace": "ebizbase/nginx-spa",
+    "labels": {
+      "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
+      "org.opencontainers.image.description": "Nginx image for SPA",
+      "org.opencontainers.image.licenses": "MIT"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "load": true,
+        "tags": ["edge"]
+      }
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker run --rm ebizbase/nginx-spa:edge -T"
+      }
+    },
+    "publish": {
+      "executor": "@ebizbase/nx-docker:build",
+      "options": {
+        "push": true,
+        "tags": ["latest", "{major}", "{major}.{minor}", "{major}.{minor}.{patch}"]
+      }
+    }
+  }
+}

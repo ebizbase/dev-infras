@@ -113,6 +113,16 @@
           "jsonpath": "$.metadata.version"
         }
       ]
+    },
+    "images/nginx-spa": {
+      "package-name": "nginx-spa",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }
