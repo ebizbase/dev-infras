@@ -10,6 +10,11 @@
       "default": ".",
       "description": "The workspace folder to build the image (The parrent directory contain .devcontainer/devcontainer.json)"
     },
+    "configFile": {
+      "type": "string",
+      "default": "devcontainer.json",
+      "description": "The path to the devcontainer.json file"
+    },
     "registries": {
       "type": "array",
       "items": {
