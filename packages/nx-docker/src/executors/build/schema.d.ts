@@ -16,4 +16,7 @@ export interface DockerExecutorSchema {
   metadataFile?: string;
   flatforms: string[];
   labels?: { [key: string]: string };
+  registries: Array<string>;
+  version?: string;
+  namespace?: string;
 }
