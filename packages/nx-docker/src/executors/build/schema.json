@@ -97,6 +97,13 @@
     "flatforms": {
       "type": "string",
       "description": "Set the target platform"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The list of labels to add to the image"
     }
   },
   "required": ["tags"]
