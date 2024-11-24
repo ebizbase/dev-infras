@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "metadata": {
-    "version": "0.0.0",
+    "version": "1.0.0",
     "registries": [
       "ghcr.io",
       "docker.io"
