@@ -43,6 +43,16 @@
       "type": "string",
       "description": "Namespace and name for the devcontainer image in the registry"
     },
+    "load": {
+      "type": "boolean",
+      "description": "Load the image into the docker daemon",
+      "default": false
+    },
+    "push": {
+      "type": "boolean",
+      "description": "Push the image to the registry",
+      "default": false
+    },
     "tags": {
       "type": "array",
       "items": {
