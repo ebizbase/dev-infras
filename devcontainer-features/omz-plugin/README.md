@@ -12,7 +12,7 @@ This feature will install and active plugins for oh my zsh
       "zsh-syntax-highlighting:https://github.com/zsh-users/zsh-syntax-highlighting.git",
       "zsh-autosuggestions:https://github.com/zsh-users/zsh-autosuggestions/archive/refs/tags/v0.7.1.zip"
     ],
-    "deleteInactive": false, // you can delete inactive plugins for lighter image
+    "deleteInactive": false, 
   }
 }
 ```
@@ -26,4 +26,5 @@ This feature will install and active plugins for oh my zsh
 | deleteInactive      | Should delete inactive plugins or not                                                         | bool  | false   |
 
 **(\*)** See [list of oh-my-zsh preinstalled plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/plugins)
-**(\*\*)** We support zip release url or git url. See example [here](https://github.com/ebizbase/dev-infras/blob/fff3b6ab9dd104f899b1a67c72e65c21f6f4e310/devcontainer-images/base-devcontainer/.devcontainer/devcontainer.json#L30)
+
+**(\*\*)** We support zip release url or git url. See example [here](https://github.com/ebizbase/dev-infras/blob/main/devcontainer-images/base-devcontainer/devcontainer.json)

@@ -26,7 +26,7 @@ This project is mainly used internally within ebizbase projects but we have deci
 | [npm-playwright][npm-playwright-readme] | This feature will be install playwright via npm with os dependencies and browser binaries               |
 
 
-### devconainer prebuild images 
+### devconainer images 
 
 | Name       | Description|
 | ---------- | ---------- | 
@@ -39,7 +39,7 @@ This project is mainly used internally within ebizbase projects but we have deci
 ### npm packages
 | Name       | Description|
 | ---------- | ---------- | 
-| [nx-devkit][nx-devkit-readme]  | The NX plugin to build, push and analyze image |
+| [nx-devkit][nx-devkit-readme]  | It contains many utility functions for interactive with nx workspace and projects |
 
 ### nx plugins
 | Name       | Description|

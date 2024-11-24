@@ -2,7 +2,7 @@
   "name": "@ebizbase/nx-devkit",
   "version": "1.0.0",
   "private": false,
-  "description": "The nx devkit utils",
+  "description": "It contains many utility functions for interactive with nx workspace and projects",
   "bugs": "https://github.com/ebizbase/dev-infras/issues",
   "repository": {
     "type": "git",
