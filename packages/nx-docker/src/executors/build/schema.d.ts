@@ -19,4 +19,6 @@ export interface DockerExecutorSchema {
   registries: Array<string>;
   version?: string;
   namespace?: string;
+  load: boolean;
+  push: boolean;
 }

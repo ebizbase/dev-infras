@@ -52,6 +52,8 @@ const prepareDockerArguments = (
       ['-t', `${registry}/${options.namespace}:${tag.replace(/{major}/g, version.major.toString()).replace(/{minor}/g, version.minor.toString()).replace(/{patch}/g, version.patch.toString())}`]
     )
   ).flat() || [];
+  const loadArgs = options.load ? ['--load'] : [];
+  const pushArgs = options.push ? ['--push'] : [];
 
   return [
     ...outputArgs,
@@ -69,6 +71,8 @@ const prepareDockerArguments = (
     ...tagsArgs,
     ...targetArgs,
     ...labelsArgs,
+    ...loadArgs,
+    ...pushArgs,
     '-f',
     dockerfilePath,
     contextPath,
