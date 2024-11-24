@@ -60,6 +60,7 @@ const buildExecutor: PromiseExecutor<BuildExecutorSchema> = async (options, cont
 
   const workspaceFolderArgs = [
     `--workspace-folder=${join(projectUtils.getProjectRoot(), options.workspaceFolder ?? '.')}`,
+    `--config=${join(projectUtils.getProjectRoot(), options.configFile ?? 'devcontainer.json')}`,
   ];
   options.tags = (options.tags ?? []).map((tag) =>
     tag
