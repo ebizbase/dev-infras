@@ -15,6 +15,7 @@ To install plugin run the following command:
 npm install -D @ebizbase/nx-docker
 yarn add -D @ebizbase/nx-docker
 pnpm add -D @ebizbase/nx-docker
+bun add -D @ebizbase/nx-docker
 ```
 
 ## Build image
