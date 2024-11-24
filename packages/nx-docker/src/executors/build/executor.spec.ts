@@ -47,7 +47,6 @@ describe('executor', () => {
     context: undefined,
     tags: ['latest'],
     args: ['ARG1=value1'],
-    ci: false,
     outputs: ['image'],
     flatforms: [],
   };
@@ -229,4 +228,25 @@ describe('executor', () => {
       { stdio: 'inherit', cwd: context.root }
     );
   });
+
+  it('should build Docker image with labels arguments when labels are provided', async () => {
+    options.labels = { 'com.example.label': 'label-value' };
+    await executor(options, context);
+    const expectedTagArgs = ['--label', 'com.example.label="label-value"'];
+    expect(execFileSync).toHaveBeenCalledWith('docker', expect.arrayContaining(expectedTagArgs), {
+      stdio: 'inherit',
+      cwd: context.root,
+    });
+  });
+
+  it('should build Docker image without labels arguments when labels are not provided', async () => {
+    options.labels = undefined;
+    await executor(options, context);
+    expect(execFileSync).toHaveBeenCalledWith('docker', expect.not.arrayContaining(['--label']), {
+      stdio: 'inherit',
+      cwd: context.root,
+    });
+  });
+
+
 });

@@ -15,4 +15,5 @@ export interface DockerExecutorSchema {
   ulimit?: string[];
   metadataFile?: string;
   flatforms: string[];
+  labels?: { [key: string]: string };
 }

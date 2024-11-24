@@ -78,6 +78,11 @@ const executor: PromiseExecutor<DockerExecutorSchema> = async (options, context)
   const shmSizeArgs = options.shmSize ? ['--shm-size', options.shmSize] : [];
   const uLimitArgs = options.ulimit ? [`--ulimit${options.ulimit}`] : [];
   const targetArgs = options.target ? ['--target', options.target] : [];
+  const labelsArgs = options.labels
+    ? Object.entries(options.labels)
+      .map(([key, value]) => ['--label', `${key}="${value}"`])
+      .flat()
+    : [];
 
   try {
     const command = [
@@ -96,6 +101,7 @@ const executor: PromiseExecutor<DockerExecutorSchema> = async (options, context)
       ...uLimitArgs,
       ...tagArgs,
       ...targetArgs,
+      ...labelsArgs,
       '-f',
       dockerfilePath,
       contextPath,
