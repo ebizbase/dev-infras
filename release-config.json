@@ -103,6 +103,16 @@
           "jsonpath": "$.metadata.version"
         }
       ]
+    },
+    "images/node-distroless": {
+      "package-name": "node-distroless",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }
