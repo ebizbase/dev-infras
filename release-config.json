@@ -123,6 +123,16 @@
           "jsonpath": "$.metadata.version"
         }
       ]
+    },
+    "images/mongodev": {
+      "package-name": "mongodev",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }

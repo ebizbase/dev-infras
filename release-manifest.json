@@ -12,5 +12,6 @@
   "devcontainer-images/node-dind-playwright-devcontainer": "1.0.0",
   "devcontainer-images/node-playwright-devcontainer": "1.0.0",
   "images/node-distroless": "1.0.0",
-  "images/nginx-spa": "1.0.0"
+  "images/nginx-spa": "1.0.0",
+  "images/mongodev": "1.0.0"
 }
