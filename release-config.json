@@ -133,6 +133,16 @@
           "jsonpath": "$.metadata.version"
         }
       ]
+    },
+    "images/redisdev": {
+      "package-name": "redisdev",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "project.json",
+          "jsonpath": "$.metadata.version"
+        }
+      ]
     }
   }
 }
