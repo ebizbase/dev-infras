@@ -11,7 +11,7 @@
     "namespace": "ebizbase/mongodev",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
-      "org.opencontainers.image.description": "Mongodb development image with mongo and mongo-express",
+      "org.opencontainers.image.description": "MongoDB with replicate set mode with only one node and mongo-express is UI manager tool",
       "org.opencontainers.image.licenses": "MIT"
     }
   },

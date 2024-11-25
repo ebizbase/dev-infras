@@ -11,7 +11,7 @@
     "namespace": "ebizbase/redisdev",
     "labels": {
       "org.opencontainers.image.source": "https://github.com/ebizbase/dev-infras",
-      "org.opencontainers.image.description": "Redis development image with redis and redis-commander",
+      "org.opencontainers.image.description": "Redis with redis-commander is UI manager tool",
       "org.opencontainers.image.licenses": "MIT"
     }
   },

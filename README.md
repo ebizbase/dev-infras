@@ -40,7 +40,9 @@ This project is mainly used internally within ebizbase projects but we have deci
 | Name                                      | Description                                                                                                                                                                                      |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [node-distroless][node-distroless-readme] | This image combines the compactness and security of distroless with the convenience of dumb-init for process management, making Node.js applications run more stably in a container environment. |
-| [nginx-spa][node-distroless-readme]       | This docker image can be used for single page apps. It serves your index.html if no other file matches.                                                                                          |
+| [nginx-spa][node-distroless-readme]       | This docker image can be used for single page apps. It serves your index.html if no other file matches. |
+| [mongodev][mongodev-readme] | This image include mongodb with replicate set mode with only one node and mongo-express for UI manager tool. |
+| [redisdev][redisdev-readme] | This image include redis and redis-commander for UI manager tool. |
 
 ### npm packages
 
@@ -103,3 +105,5 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 [nx-dive-readme]: https://github.com/ebizbase/dev-infras/blob/main/packages/nx-dive/README.md
 [node-distroless-readme]: https://github.com/ebizbase/dev-infras/blob/main/images/node-distroless/README.md
 [nginx-spa-readme]: https://github.com/ebizbase/dev-infras/blob/main/images/nginx-spa/README.md
+[mongodev-readme]: https://github.com/ebizbase/dev-infras/blob/main/images/mongodev/README.md
+[redisdev-readme]: https://github.com/ebizbase/dev-infras/blob/main/images/redisdev/README.md
