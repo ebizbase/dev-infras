@@ -30,7 +30,7 @@
     "@swc/jest": "~0.2.36",
     "@types/is-ci": "^3.0.4",
     "@types/jest": "^29.5.12",
-    "@types/node": "22.9.3",
+    "@types/node": "22.9.4",
     "@types/semver": "^7.5.8",
     "@typescript-eslint/utils": "^8.0.0",
     "eslint": "^9.8.0",
