@@ -1,6 +1,6 @@
 FROM rediscommander/redis-commander:latest@sha256:19cd0c49f418779fa2822a0496c5e6516d0c792effc39ed20089e6268477e40a as redis-commander
 
-FROM redis:bookworm@sha256:af0be38eb8e43191bae9b03fe5c928803930b6f93e2dde3a7ad1165c04b1ce22
+FROM redis:bookworm@sha256:ea96c435dc17b011f54c6a883c3c45e7726242b075de61c6fe40a10ae6ae0f83
 
 RUN apt-get update && apt-get install -y curl \
   && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
