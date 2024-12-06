@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
-    "@nx/devkit": "20.1.4",
+    "@nx/devkit": "20.2.0",
     "@ebizbase/nx-devkit": "1.0.0"
   },
   "type": "commonjs",
