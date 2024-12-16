@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/ebizbase/dev-infras/compare/nx-dive-v1.0.1...nx-dive-v1.0.2) (2024-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update nx packages to v20.1.4 ([ef0ae68](https://github.com/ebizbase/dev-infras/commit/ef0ae68734f125319a9b2888a2766021b5b56cbb))
+* **deps:** update nx packages to v20.2.0 ([839cfe2](https://github.com/ebizbase/dev-infras/commit/839cfe25cab817d7e89024097135cca2c47a8193))
+* **deps:** update nx packages to v20.2.2 ([9b3198d](https://github.com/ebizbase/dev-infras/commit/9b3198d1706fff6ffeee96772849f707b75309e6))
+
 ## [1.0.1](https://github.com/ebizbase/dev-infras/compare/nx-dive-v1.0.0...nx-dive-v1.0.1) (2024-11-23)
 
 
