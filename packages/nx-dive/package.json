@@ -1,6 +1,6 @@
 {
   "name": "@ebizbase/nx-dive",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "tslib": "^2.3.0",
     "@nx/devkit": "20.3.0",
